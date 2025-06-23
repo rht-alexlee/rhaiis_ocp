@@ -17,7 +17,19 @@ spec:
       containers:
         - name: rhaiis
           image: registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0
-          args: ["--max-model-len", "8192","--gpu-memory-utilization", "0.6","--model", "RedHatAI/Qwen3-4B-quantized.w4a16"]
+          args:
+            - '--max-model-len'
+            - '4096'
+            - '--gpu-memory-utilization'
+            - '0.92'
+            - '--cpu-offload-gb'
+            - '20'
+            - '--max-num-seqs'
+            - '8'
+            - '--tensor-parallel-size'
+            - '1'
+            - '--model'
+            - RedHatAI/Qwen3-8B-quantized.w4a16
           ports:
             - containerPort: 8000
           env:
