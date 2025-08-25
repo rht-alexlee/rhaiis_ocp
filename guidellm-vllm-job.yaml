@@ -29,11 +29,13 @@ spec:
           - "--data"
           - "{"prompt_tokens":512,"output_tokens":128}"
           - "--rate-type"
-          - "sweep"
+          - "concurrent"
+          - "--rate"
+          - "1,2,4,8,16,32,64,128,256"  #use a single rate for shorter runtimes
           - "--max-seconds"
           - "30"
           - "--output-path"
-          - "/results/output.json"
+          - "/results/concur-output.json"
         volumeMounts:
         - name: results-volume
           mountPath: /results
