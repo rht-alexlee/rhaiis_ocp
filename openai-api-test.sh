@@ -1,0 +1,1 @@
+curl --insecure -X POST -H "Content-Type: application/json" -d '{ "prompt": "What is the capital of France?", "max_tokens": 50}' https://rhaiis-runner-route-rhaiis.apps.ocp4-sno.redhat.local/v1/completions | jq
